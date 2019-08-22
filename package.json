@@ -1,0 +1,35 @@
+{
+  "name": "syllable-loops",
+  "version": "1.0.0",
+  "description": "Shopify Theme for Loops Ecommerce Site",
+  "repository": "git@github.com:Bondfire/syllable-loops.git",
+  "author": "Bondfire Inc.",
+  "license": "NONE",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "slate-tools start --env=development",
+    "build": "slate-tools build",
+    "deploy:production": "slate-tools build && slate-tools deploy --env=production",
+    "deploy:staging": "slate-tools build && slate-tools deploy --env=staging",
+    "deploy:development-replace": "slate-tools build && slate-tools deploy --replace --env=development",
+    "lint": "eslint ./ --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@shopify/slate-tools": "^1.0.0-beta.18",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "classnames": "^2.2.6",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
+    "lodash": "^4.17.11",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^4.3.1",
+    "recompose": "^0.30.0"
+  }
+}

@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
+
+{% capture seo_title %}
+	{{ page_title }}
+	{% if current_tags %}
+		{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}
+	{% endif %}
+	{% if current_page != 1 %}
+		&ndash; {{ 'general.meta.page' | t: page: current_page }}
+	{% endif %}
+	{% assign escaped_page_title = page_title | escape %}
+	{% unless escaped_page_title contains shop.name %}
+		&ndash; {{ shop.name }}
+	{% endunless %}
+{% endcapture %}
+
+<title>{{ seo_title | strip }}</title>
+
+{% if page_description %}
+<meta name="description" content="{{ page_description | escape }}">
+{% endif %}

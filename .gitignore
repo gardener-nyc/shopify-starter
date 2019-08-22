@@ -1,0 +1,6 @@
+node_modules
+dist
+.yarn-cache
+.env
+.env.*
+!.env.example

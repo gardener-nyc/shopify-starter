@@ -1,0 +1,262 @@
+$sides: (
+	t : top,
+	b : bottom,
+	l : left,
+	r : right
+);
+
+$alignments: (
+	l : left,
+	r : right,
+	c : center,
+);
+
+@each $color-name, $color-value in $all-colors {
+	.color--#{inspect($color-name)} {
+		color: $color-value;
+	}
+}
+
+@each $color-name, $color-value in $all-colors {
+	.bg--#{inspect($color-name)} {
+		background: $color-value;
+	}
+}
+
+@each $color-name, $color-value in $all-colors {
+	.b--#{inspect($color-name)} {
+		border: 1px solid $color-value;
+	}
+}
+
+@each $color-name, $color-value in $all-colors {
+	@each $side-name, $side-direction in $sides {
+		.b#{inspect($side-name)}--#{inspect($color-name)} {
+			border-#{$side-direction}: 1px solid $color-value;
+		}
+	}
+}
+
+@each $color-name, $color-value in $all-colors {
+	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+		@media (min-width: #{$breakpoint-size}) {
+			.b--#{inspect($color-name)}--#{$breakpoint-name} {
+				border: 1px solid $color-value;
+			}
+		}
+	}
+}
+
+@each $color-name, $color-value in $all-colors {
+	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+		@media (min-width: #{$breakpoint-size}) {
+			@each $side-name, $side-direction in $sides {
+				.b#{inspect($side-name)}--#{inspect($color-name)}--#{inspect($breakpoint-name)} {
+					border-#{$side-direction}: 1px solid $color-value;
+				}
+			}
+		}
+	}
+}
+
+@each $alignment-name, $alignment-direction in $alignments {
+	.t#{$alignment-name} {
+		text-align: #{$alignment-direction};
+	}
+}
+
+@each $alignment-name, $alignment-direction in $alignments {
+	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+		@media (min-width: #{$breakpoint-size}) {
+			.t#{$alignment-name}--#{$breakpoint-name} {
+				text-align: #{$alignment-direction};
+			}
+		}
+	}
+}
+
+.db  { display: block !important; }
+.dn  { display: none !important; }
+.di  { display: inline !important; }
+.dib { display: inline-block !important; }
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		.db--#{$breakpoint-name}  { display: block !important; }
+		.dn--#{$breakpoint-name}  { display: none !important; }
+		.di--#{$breakpoint-name}  { display: inline !important; }
+		.dib--#{$breakpoint-name} { display: inline-block !important; }
+	}
+}
+
+.pr  { position: relative; }
+.pa  { position: absolute; }
+.ps  { position: static; }
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		.pr--#{$breakpoint-name}  { position: relative; }
+		.pa--#{$breakpoint-name}  { position: absolute; }
+		.ps--#{$breakpoint-name}  { position: static; }
+	}
+}
+
+.full-width {
+	display: block;
+	width: 100%;
+}
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		.full-width--#{$breakpoint-name} {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+.contained-width {
+	max-width: 100%;
+}
+
+.vertical-align-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+$opacities: (
+	0   : 0,
+	10  : 0.1,
+	20  : 0.2,
+	30  : 0.3,
+	40  : 0.4,
+	50  : 0.5,
+	60  : 0.6,
+	70  : 0.7,
+	80  : 0.8,
+	90  : 0.9,
+	100 : 1,
+);
+
+@each $opacity-name, $opacity-value in $opacities {
+	.o#{inspect($opacity-name)} {
+		opacity: $opacity-value;
+	}
+
+	.o#{inspect($opacity-name)}--hover {
+		&:hover {
+			opacity: $opacity-value;
+		}
+	}
+
+	@each $breakpoint-name, $breakpoint-size in $breakpoints {
+		@media (min-width: #{$breakpoint-size}) {
+			.o#{inspect($opacity-name)}--#{$breakpoint-name} {
+				opacity: $opacity-value;
+			}
+		
+			.o#{inspect($opacity-name)}--hover--#{$breakpoint-name} {
+				&:hover {
+					opacity: $opacity-value;
+				}
+			}
+		}
+	}
+}
+
+.vam {
+	vertical-align: middle;
+}
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		.vam--#{$breakpoint-name} {
+			vertical-align: middle;
+		}
+	}
+}
+
+.ws--pre {
+	white-space: pre;
+}
+
+.ws--nowrap {
+	white-space: nowrap;
+}
+
+.ws--pre-line {
+	white-space: pre-line;
+}
+
+.wb--break-word {
+	word-break: break-word;
+}
+
+.of--hidden,
+.no-scroll {
+	overflow: hidden;
+}
+
+.pe--none {
+	pointer-events: none;
+}
+
+.pe--auto {
+	pointer-events: auto;
+}
+
+.m--auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ml--auto {
+	margin-left: auto;
+}
+
+.mr--auto {
+	margin-right: auto;
+}
+
+///
+// === Font Weight ===
+//
+
+.fw--200 {
+	font-weight: 200;
+}
+
+.fw--400 {
+	font-weight: 400;
+}
+
+//
+// === Z-Index Utilities ===
+//
+
+.push-up {
+	position: relative;
+	z-index: 1;
+}
+
+//
+// === Transitions ===
+//
+
+.disable-transitions {
+	transition: none !important;
+	* { transition: none !important; }
+}
+
+//
+// === Focus ===
+//
+
+.disable-focus-ring {
+	&:focus {
+		outline: none;
+	}
+}

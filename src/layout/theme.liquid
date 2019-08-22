@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include 'head-meta-tags' %}
+	{% include 'social-meta-tags' %}
+	{% include 'fonts' %}
+	{% include 'style-tags', layout: 'theme' %}
+	{{ content_for_header }}
+</head>
+<body>
+	{{ content_for_layout }}
+	{% include 'script-tags', layout: 'theme' %}
+</body>
+</html>

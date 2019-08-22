@@ -1,0 +1,184 @@
+.list {
+	margin:  0;
+	padding: 0;
+	list-style: none;
+	font-size: 0;
+	line-height: 0;
+}
+
+.list--scroll {
+	white-space: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	.list__item {
+		white-space: initial;
+	}
+}
+
+.list__item {
+	@include body-font-size;
+}
+
+// Inline
+.list--horizontal {
+	> .list__item {
+		display: inline-block;
+		margin-right: $grid-gutter-desktop;
+		vertical-align: top;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	&.list--vertical-gutter {
+		margin-bottom: -$grid-gutter-desktop;
+		> .list__item {
+			margin-bottom: $grid-gutter-desktop;
+		}
+	}
+}
+
+// Block List
+.list--vertical {
+	> .list__item {
+		display: block;
+		margin-bottom: $grid-gutter-desktop;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Align
+.list.align--middle {
+	> .list__item {
+		vertical-align: middle;
+	}
+}
+
+.list.align--bottom {
+	> .list__item {
+		vertical-align: bottom;
+	}
+}
+
+.list.align--top {
+	> .list__item {
+		vertical-align: top;
+	}
+}
+
+.list.align--baseline {
+	> .list__item {
+		vertical-align: baseline;
+	}
+}
+
+// Extra Gutter Sizes
+@each $gutter-name, $gutter-size in $grid-gutter-extra {
+	.list--vertical.gutter--#{$gutter-name} {
+		> .list__item {
+			margin-bottom: $gutter-size;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	.list--horizontal.gutter--#{$gutter-name} {
+		> .list__item {
+			margin-right: $gutter-size;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		
+		&.list--vertical-gutter {
+			margin-bottom: -$gutter-size;
+			> .list__item {
+				margin-bottom: $gutter-size;
+			}
+		}
+	}
+}
+
+// Responsive Orientation
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		.list--horizontal--#{$breakpoint-name} {
+			> .list__item {
+				display: inline-block;
+				margin-right: $grid-gutter-desktop;
+				
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			
+			&.list--vertical-gutter {
+				margin-bottom: -$grid-gutter-desktop;
+				
+				> .list__item {
+					margin-bottom: $grid-gutter-desktop;
+				}
+			}
+		}
+
+		// Block List
+		.list--vertical--#{$breakpoint-name} {
+			> .list__item {
+				display: block;
+				margin-bottom: $grid-gutter-desktop;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+// Responsive Gutters
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		@each $gutter-name, $gutter-size in $grid-gutter-extra {
+			.list--vertical.gutter--#{$gutter-name}--#{$breakpoint-name},
+			.list--vertical--#{$breakpoint-name}.gutter--#{$gutter-name}--#{$breakpoint-name},
+			.list--vertical--#{$breakpoint-name}.gutter--#{$gutter-name} {
+				> .list__item {
+					margin-bottom: $gutter-size;
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+			.list--horizontal.gutter--#{$gutter-name}--#{$breakpoint-name},
+			.list--horizontal--#{$breakpoint-name}.gutter--#{$gutter-name}--#{$breakpoint-name},
+			.list--horizontal--#{$breakpoint-name}.gutter--#{$gutter-name} {
+				> .list__item {
+					margin-right: $gutter-size;
+					
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				
+				&.list--vertical-gutter {
+					margin-bottom: -$gutter-size;
+					
+					> .list__item {
+						margin-bottom: $gutter-size;
+					}
+				}
+			}
+		}
+	}
+}
