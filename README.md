@@ -45,5 +45,5 @@ $ yarn theme:push:theme
 1. Download theme content from live site
 
 ```
-$ yarn theme:pull
+$ yarn theme:pull:data
 ```
