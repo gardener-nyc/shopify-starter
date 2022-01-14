@@ -9,6 +9,7 @@
 		"webpack:watch": "webpack watch",
 		"webpack:build": "webpack build",
 		"// THEME //": "",
+		"theme:start": "shopify theme serve",
 		"theme:push": "yarn build && shopify theme push",
 		"theme:pull": "shopify theme pull --nodelete"
 	},
