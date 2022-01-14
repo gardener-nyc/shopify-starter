@@ -1,9 +1,4 @@
 {
-	"sections": {
-		"image": {
-			"type": "image",
-			"settings": {}
-		}
-	},
-	"order": ["image"]
+	"sections": {},
+	"order": []
 }
