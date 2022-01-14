@@ -8,7 +8,11 @@
 
 ## Setup
 
-1. Install dev dependencies via `yarn`.
+1. Install dev dependencies via
+
+```
+$ yarn
+```
 
 2. Log into Shopify store via CLI:
 
