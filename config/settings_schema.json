@@ -1,5 +1,13 @@
 [
 	{
+		"name": "theme_info",
+		"theme_name": "Development",
+		"theme_version": "1.0.0",
+		"theme_author": "Gardener NYC",
+		"theme_documentation_url": "https://github.com/gardener-nyc/shopify-starter",
+		"theme_support_email": "ian@gardener.nyc"
+	},
+	{
 		"name": "Favicon",
 		"settings": [
 			{

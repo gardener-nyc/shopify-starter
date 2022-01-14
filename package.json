@@ -1,7 +1,15 @@
 {
 	"name": "shopify-starter",
 	"version": "1.0.0",
-	"scripts": {},
+	"scripts": {
+		"start": "yarn webpack:watch",
+		"build": "NODE_ENV=production yarn webpack:build",
+		"// WEBPACK //": "",
+		"webpack:watch": "webpack watch",
+		"webpack:build": "webpack build",
+		"// THEME //": "",
+		"theme:publish": "yarn build && shopify theme push"
+	},
 	"author": "https://www.gardener.nyc",
 	"license": "MIT",
 	"homepage": "https://github.com/gardener-nyc/shopify-starter",
@@ -9,6 +17,20 @@
 		"babel-eslint": "^10.0.3",
 		"eslint": "^6.5.1",
 		"eslint-plugin-react": "^7.16.0",
-		"prettier": "^2.1.2"
+		"prettier": "^2.1.2",
+		"webpack-cli": "^4.9.1"
+	},
+	"dependencies": {
+		"css-loader": "^6.5.1",
+		"esbuild-loader": "^2.18.0",
+		"mini-css-extract-plugin": "^2.4.7",
+		"postcss": "^8.4.5",
+		"postcss-loader": "^6.2.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"sass": "^1.48.0",
+		"sass-loader": "^12.4.0",
+		"tailwindcss": "^3.0.13",
+		"webpack": "^5.66.0"
 	}
 }

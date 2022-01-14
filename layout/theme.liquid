@@ -7,13 +7,15 @@
 	<link rel="canonical" href="{{ canonical_url }}">
 	<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
-	{%- if settings.favicon != blank -%}
+	{% if settings.favicon != blank %}
 		<link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
-	{%- endif -%}
+	{% endif %}
+
+	{{ 'main.css' | asset_url | stylesheet_tag }}
 
 	<title>
 		{{ page_title }}
-		{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+		{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
 	</title>
 
 	{% if page_description %}
@@ -24,5 +26,6 @@
 </head>
 <body>
 	{{ content_for_layout }}
+	{{ 'index.js' | asset_url | script_tag }}
 </body>
 </html>
