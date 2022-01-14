@@ -1,0 +1,9 @@
+{
+	"sections": {
+		"image": {
+			"type": "image",
+			"settings": {}
+		}
+	},
+	"order": ["image", "image2"]
+}

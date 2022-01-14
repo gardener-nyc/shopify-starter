@@ -1,3 +1,3 @@
 import '../styles/main.scss';
 
-console.log('sup');
+console.log('hello world');

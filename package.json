@@ -9,7 +9,8 @@
 		"webpack:watch": "webpack watch",
 		"webpack:build": "webpack build",
 		"// THEME //": "",
-		"theme:publish": "yarn build && shopify theme push"
+		"theme:push": "yarn build && shopify theme push",
+		"theme:pull": "shopify theme pull --nodelete"
 	},
 	"author": "https://www.gardener.nyc",
 	"license": "MIT",

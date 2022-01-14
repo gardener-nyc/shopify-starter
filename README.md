@@ -19,10 +19,10 @@ $ shopify login --store shopify-store
 3. Start the Shopify dev server.
 
 ```
-$ shopify theme serve
+$ yarn theme:start
 ```
 
-4. Start the dev server in another tab
+4. Start the dev server in another terminal process.
 
 ```
 $ yarn start
@@ -30,8 +30,16 @@ $ yarn start
 
 ## Publishing
 
-1. Publish to the theme of choice
+1. Upload to the theme of choice.
 
 ```
-$ yarn theme:publish
+$ yarn theme:push
+```
+
+## Updating content
+
+1. Download theme content from live site
+
+```
+$ yarn theme:pull
 ```
