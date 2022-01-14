@@ -30,10 +30,10 @@ $ yarn start
 
 ## Publishing
 
-1. Upload to the theme of choice.
+1. Upload just theme files, ignoring data, to the theme of choice.
 
 ```
-$ yarn theme:push
+$ yarn theme:push:theme
 ```
 
 ## Updating content

@@ -10,8 +10,10 @@
 		"webpack:build": "webpack build",
 		"// THEME //": "",
 		"theme:start": "shopify theme serve",
-		"theme:push": "yarn build && shopify theme push",
-		"theme:pull": "shopify theme pull --nodelete"
+		"theme:push:all": "yarn build && shopify theme push",
+		"theme:push:theme": "yarn build && shopify theme push -x 'templates/*.json' -x 'config/settings_schema.json'",
+		"theme:pull:all": "shopify theme pull --nodelete",
+		"theme:pull:data": "shopify theme pull --nodelete -x 'assets/*' -x 'layout/*' -x 'locales/*' -x 'sections/*' -x 'snippets/*' -x 'templates/*.liquid' -x 'config/settings_schema.json' "
 	},
 	"author": "https://www.gardener.nyc",
 	"license": "MIT",
