@@ -1,0 +1,13 @@
+[
+	{
+		"name": "Favicon",
+		"settings": [
+			{
+				"type": "image_picker",
+				"id": "favicon",
+				"label": "Favicon",
+				"info": "This should be a 128x128 PNG file."
+			}
+		]
+	}
+]

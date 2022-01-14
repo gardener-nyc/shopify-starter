@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.DS_Store": true,
+			"**/.git": false,
+			"**/.sass-cache": true,
+			"**/.yarn-cache": true
+		},
+		"editor.renderWhitespace": "all",
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": true,
+		"prettier.enable": true,
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"extensions.ignoreRecommendations": false,
+		"javascript.validate.enable": false,
+		"javascript.updateImportsOnFileMove.enabled": "never",
+		"editor.largeFileOptimizations": false,
+		"liquid.format": true,
+		"html.format.wrapLineLength": 200,
+		"html.format.wrapAttributes": "auto"
+	}
+}

@@ -1,27 +1,23 @@
 {
 	"parser": "babel-eslint",
+	"plugins": [
+		"react"
+	],
 	"env": {
 		"node": true,
 		"browser": true,
 		"es6": true
 	},
-	"plugins": [
-		"react"
-	],
 	"parserOptions": {
 		"ecmaFeatures": {
 			"modules": true,
-			"jsx": true,
-			"es6":true
+			"jsx": true
 		}
 	},
 	"globals": {
 		"import": false
 	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:react/recommended"
-	],
+	"extends": "eslint:recommended",
 	"rules": {
 		"comma-dangle": [
 			"off"
@@ -54,7 +50,33 @@
 			{"vars": "all", "args": "none"}
 		],
 
-		"react/display-name": 0,
-		"react/prop-types": 0
+		"react/jsx-boolean-value": 1,
+		"react/jsx-indent-props": [1, "tab"],
+		"react/jsx-no-duplicate-props": 1,
+		"react/jsx-no-undef": 1,
+		"react/jsx-uses-react": 1,
+		"react/jsx-uses-vars": 1,
+		"react/no-did-mount-set-state": 1,
+		"react/no-did-update-set-state": 1,
+		"react/no-unknown-property": 1,
+		"react/prop-types": 0,
+		"react/react-in-jsx-scope": 1,
+		"react/self-closing-comp": 1,
+		"react/sort-comp": [
+			"warn", {
+				"order": [
+					"lifecycle",
+					"everything-else",
+					"rendering"
+				],
+				"groups": {
+					"rendering": [
+						"render",
+						"/^render.+$/"
+					]
+				}
+			}
+		],
+		"react/jsx-wrap-multilines": 1
 	}
 }
