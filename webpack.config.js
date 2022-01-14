@@ -2,9 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const entrypointsDir = path.resolve(__dirname, 'src', 'entrypoints');
+const srcDir = path.resolve(__dirname, 'src');
+const entrypointsDir = path.resolve(srcDir, 'entrypoints');
+const assetsDir = path.resolve(srcDir, 'assets');
 const outputDir = path.resolve(__dirname, 'assets');
 const entrypoints = fs.readdirSync(entrypointsDir).reduce(
 	(entrypoints, file) => ({
@@ -36,7 +39,7 @@ module.exports = {
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				include: path.resolve(__dirname, 'src'),
+				include: srcDir,
 				use: [
 					MiniCssExtractPlugin.loader,
 					'css-loader',
@@ -46,5 +49,10 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [new MiniCssExtractPlugin()],
+	plugins: [
+		new MiniCssExtractPlugin(),
+		new CopyPlugin({
+			patterns: [{from: assetsDir, to: outputDir}],
+		}),
+	],
 };
