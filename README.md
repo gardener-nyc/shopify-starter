@@ -2,7 +2,7 @@
 
 ## Dependencies
 
--   [Node 8.9.4](http://nodejs.org/)
+-   [Node](http://nodejs.org/)
 -   [Yarn](https://yarnpkg.com/en/)
 -   [Shopify CLI](https://github.com/Shopify/shopify-cli)
 
