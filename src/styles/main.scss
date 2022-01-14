@@ -1,3 +1,31 @@
-body {
-	background-color: blue;
-}
+//
+// === Tailwind ===
+//
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//
+// === Config, Functions, Reset ===
+//
+
+@import './global/mixins';
+@import './global/reset';
+
+//
+// === Globals ===
+//
+
+@import './global/fonts';
+@import './global/typography';
+
+//
+// === Comments ===
+//
+
+@import './components/rich-text';
+@import './components/link';
+@import './components/hr';
+@import './components/scroll';
+@import './components/image';

@@ -11,7 +11,7 @@
 		<link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
 	{% endif %}
 
-	{{ 'main.css' | asset_url | stylesheet_tag }}
+	{{ 'theme.css' | asset_url | stylesheet_tag }}
 
 	<title>
 		{{ page_title }}
@@ -26,6 +26,6 @@
 </head>
 <body>
 	{{ content_for_layout }}
-	{{ 'index.js' | asset_url | script_tag }}
+	{{ 'theme.js' | asset_url | script_tag }}
 </body>
 </html>

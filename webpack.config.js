@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const entrypointsDir = path.resolve(__dirname, 'src', 'entrypoints');
@@ -19,6 +20,9 @@ module.exports = {
 	output: {
 		path: outputDir,
 		filename: '[name].js',
+	},
+	optimization: {
+		minimizer: ['...', new CssMinimizerPlugin()],
 	},
 	module: {
 		rules: [
