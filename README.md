@@ -20,6 +20,16 @@ $ yarn
 $ yarn start
 ```
 
+## Pushing to Production
+
+1. Build production ready theme files
+
+```
+$ yarn build
+```
+
+2. Make a new commit and push to master. The github integration will take care of the rest.
+
 ## Publishing
 
 1. Upload just theme files, ignoring data, to the theme of choice.

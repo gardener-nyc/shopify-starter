@@ -1,5 +1,4 @@
 const reduce = require('lodash/reduce');
-const Color = require('color');
 
 //
 // === Project Config ===
