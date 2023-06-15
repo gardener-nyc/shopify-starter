@@ -2,14 +2,17 @@
 	"name": "shopify-starter",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "yarn webpack:watch",
-		"build": "NODE_ENV=production yarn webpack:build",
+		"start": "npm-run-all --parallel vite:dev theme:dev",
+		"build": "NODE_ENV=production yarn vite:build",
 		"clean": "rm -rf assets",
 		"// WEBPACK //": "",
 		"webpack:watch": "webpack watch",
 		"webpack:build": "webpack build",
+		"// VITE //": "",
+		"vite:dev": "vite dev",
+		"vite:build": "vite build",
 		"// THEME //": "",
-		"theme:start": "shopify theme dev",
+		"theme:dev": "shopify theme dev --store gardener-starter",
 		"theme:push:all": "yarn build && shopify theme push",
 		"theme:push:theme": "yarn build && shopify theme push -x 'templates/*.json' -x 'config/settings_schema.json'",
 		"theme:pull:all": "shopify theme pull --nodelete",
@@ -34,6 +37,7 @@
 		"esbuild-loader": "^2.18.0",
 		"lodash": "^4.17.21",
 		"mini-css-extract-plugin": "^2.4.7",
+		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.5",
 		"postcss-loader": "^6.2.1",
 		"react": "^17.0.2",
@@ -41,6 +45,8 @@
 		"sass": "^1.48.0",
 		"sass-loader": "^12.4.0",
 		"tailwindcss": "^3.0.13",
+		"vite": "^4.3.9",
+		"vite-plugin-shopify": "^2.1.1",
 		"webpack": "^5.66.0"
 	}
 }

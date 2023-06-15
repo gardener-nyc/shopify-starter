@@ -11,8 +11,6 @@
 		<link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
 	{% endif %}
 
-	{{ 'theme.css' | asset_url | stylesheet_tag }}
-
 	<title>
 		{{ page_title }}
 		{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
@@ -22,10 +20,13 @@
 		<meta name="description" content="{{ page_description | escape }}">
 	{% endif %}
 
+	{% render 'assets' with 'theme.css'%}
+
 	{{ content_for_header }}
 </head>
 <body>
 	{{ content_for_layout }}
-	{{ 'theme.js' | asset_url | script_tag }}
+	
+	{% render 'assets' with 'theme.js'%}
 </body>
 </html>

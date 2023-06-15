@@ -14,13 +14,7 @@
 $ yarn
 ```
 
-2. Start the Shopify dev server.
-
-```
-$ yarn theme:start --store shopify-store
-```
-
-3. Start the dev server in another terminal process.
+2. Start the dev server and log into Shopify store.
 
 ```
 $ yarn start

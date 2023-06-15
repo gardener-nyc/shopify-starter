@@ -140,9 +140,17 @@ a {
 }
 
 a,
-button {
+button,
+.button {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 	&:focus {
-		outline: 1px dotted;
+		outline: none;
+	}
+
+	&:focus-visible,
+	&.focus-visible {
+		outline: 2px dotted var(--theme-color, theme('colors.black'));
 	}
 }
 
@@ -153,7 +161,7 @@ hr {
 	border-bottom: 1px solid;
 }
 
-// Fixes issues with sideways iOS devices
+/* Fixes issues with sideways iOS devices */
 html {
 	-webkit-text-size-adjust: 100%;
 }

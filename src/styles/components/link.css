@@ -1,0 +1,59 @@
+@layer components {
+	.link-underline {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 1px;
+		text-decoration-color: currentColor;
+		transition: text-decoration-color 300ms
+			theme('transitionTimingFunction.in-out-quad');
+
+		&:hover {
+			text-decoration-color: transparent;
+		}
+	}
+
+	.link-underline-hover {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 1px;
+		text-decoration-color: transparent;
+		transition: text-decoration-color 300ms
+			theme('transitionTimingFunction.in-out-quad');
+
+		&.active,
+		&:hover {
+			text-decoration-color: currentColor;
+		}
+	}
+
+	.link-opacity {
+		opacity: 0.5;
+		transition: opacity 300ms theme('transitionTimingFunction.in-out-quad');
+
+		&.active,
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.link-opacity-hover {
+		transition: opacity 300ms theme('transitionTimingFunction.in-out-quad');
+
+		&.active,
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	.link-cover {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}

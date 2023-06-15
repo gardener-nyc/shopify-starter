@@ -1,10 +1,6 @@
 const reduce = require('lodash/reduce');
 const Color = require('color');
 
-const alpha = (clr, val) => Color(clr).alpha(val).rgb().string();
-const lighen = (clr, val) => Color(clr).lighten(val).rgb().string();
-const darken = (clr, val) => Color(clr).darken(val).rgb().string();
-
 //
 // === Project Config ===
 //
@@ -15,8 +11,8 @@ const COLORS = {
 
 const SPACING = {
 	'container-mobile': '20px',
-	'container-desktop': '40px',
-	'gutter-mobile': '10px',
+	'container-desktop': '20px',
+	'gutter-mobile': '20px',
 	'gutter-desktop': '20px',
 };
 
@@ -29,14 +25,11 @@ const FONT_FAMILIES = {
 		'Helvetica',
 		'sans-serif',
 	],
-	serif: ['serif'],
-	mono: ['monospace'],
 };
 
 const FONT_SIZES = {
 	// Sans
 	'sans-16': ['16px', '24px'],
-	'sans-24': ['24px', '32px'],
 };
 
 const LINE_HEIGHTS = reduce(

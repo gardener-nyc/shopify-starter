@@ -1,0 +1,50 @@
+/*
+// === Reset ===
+*/
+
+html,
+body {
+	@apply font-sans text-sans-16 font-400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*
+// === Selection ===
+*/
+
+* {
+	&::-moz-selection {
+		background-color: theme('colors.black');
+		color: theme('colors.white');
+	}
+	&::selection {
+		background-color: theme('colors.black');
+		color: theme('colors.white');
+	}
+}
+
+.no-focus:focus {
+	outline: none;
+}
+
+/*
+// === Utilities ===
+*/
+
+.line-break {
+	ol,
+	ul,
+	p {
+		margin-bottom: theme('lineHeight.sans-16');
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ol,
+		ul {
+			margin-bottom: 0;
+		}
+	}
+}

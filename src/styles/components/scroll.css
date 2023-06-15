@@ -1,0 +1,5 @@
+@layer utilities {
+	.scroll-touch {
+		-webkit-overflow-scrolling: touch;
+	}
+}

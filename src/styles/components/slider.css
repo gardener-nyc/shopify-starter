@@ -1,0 +1,11 @@
+@layer components {
+	.keen-slider.keen-slider.overflow-visible {
+		overflow: visible;
+	}
+
+	.keen-slider.keen-slider.lg\:overflow-hidden {
+		@screen lg {
+			overflow: hidden;
+		}
+	}
+}

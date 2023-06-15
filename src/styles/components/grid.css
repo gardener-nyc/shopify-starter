@@ -1,0 +1,21 @@
+@layer components {
+	.grid-container-reset-mobile {
+		margin-left: calc(theme('spacing.container-mobile') * -1);
+		margin-right: calc(theme('spacing.container-mobile') * -1);
+	}
+
+	.grid-container-reset-desktop {
+		margin-left: calc(theme('spacing.container-desktop') * -1);
+		margin-right: calc(theme('spacing.container-desktop') * -1);
+	}
+}
+
+@layer components {
+	.grid-reverse {
+		direction: rtl;
+
+		> * {
+			direction: ltr;
+		}
+	}
+}
