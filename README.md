@@ -4,7 +4,7 @@
 
 -   [Node](http://nodejs.org/)
 -   [Yarn](https://yarnpkg.com/en/)
--   [Shopify CLI](https://github.com/Shopify/shopify-cli)
+-   [Shopify CLI](https://shopify.dev/docs/api/shopify-cli/theme)
 
 ## Setup
 
@@ -32,16 +32,10 @@ $ yarn build
 
 ## Publishing
 
-1. Upload just theme files, ignoring data, to the theme of choice.
+1. Build theme files
 
 ```
-$ yarn theme:push:theme
+$ yarn build
 ```
 
-## Updating content
-
-1. Download theme content from live site
-
-```
-$ yarn theme:pull:data
-```
+2. Commit to Github for Shopify to pick up the new files
